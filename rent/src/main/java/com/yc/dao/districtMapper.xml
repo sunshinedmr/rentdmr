@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.dao.districtMapper">
+	<!-- 使用默认mybatis :二级缓存 -->
+	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true" />
+	<select id="getDistrictList"  resultType="District">
+	select * from district
+	</select>
+	<select id="getDistrictById"  resultType="District">
+	select * from district where id=#{id}
+	</select>
+	</mapper>
